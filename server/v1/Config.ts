@@ -2,11 +2,11 @@ import { isDevelopment } from "./Environment";
 
 const DevelopmentConfig = {
   Database: {
-    host: "localhost",
-    port: 3306,
-    user: "root",
-    password: "123",
-    database: "test",
+    host: process.env.DATABASE_HOST_DEV || "localhost",
+    port: parseInt(process.env.DATABASE_PORT_DEV || "3306"),
+    user: process.env.DATABASE_USER_DEV || "root",
+    password: process.env.DATABASE_PASSWORD_DEV || "",
+    database: process.env.DATABASE_NAME_DEV || "test",
   },
   Table: {
     Users: "users",
@@ -14,17 +14,17 @@ const DevelopmentConfig = {
     Permissions: "permissions",
     UserRoles: "user_roles",
     RolePermissions: "role_permissions",
-    PermissionGroups: "permission_groups", 
+    PermissionGroups: "permission_groups",
   },
 };
 
 const ProductionConfig = {
   Database: {
-    host: "localhost",
-    port: 3306,
-    user: "root",
-    password: "",
-    database: "test",
+    host: process.env.DATABASE_HOST_PROD || "localhost",
+    port: parseInt(process.env.DATABASE_PORT_PROD || "3306"),
+    user: process.env.DATABASE_USER_PROD || "root",
+    password: process.env.DATABASE_PASSWORD_PROD || "",
+    database: process.env.DATABASE_NAME_PROD || "test",
   },
   Table: {
     Users: "users",
