@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "test": "NODE_ENV=development mocha ./*/tests/*.spec.ts",
+    "test:watch": "yarn test --watch",
     "build": "tsc",
     "start": "nodemon ./Index.ts",
     "dev": "NODE_ENV=development nodemon -r dotenv/config ./Index.ts "

@@ -6,5 +6,5 @@
     "./v1/tests/Fixture.spec.ts"
   ],
   "extension": ["ts", "js"],
-  "watch": true
+  "exit": true
 }
