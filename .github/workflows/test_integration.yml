@@ -38,5 +38,5 @@ jobs:
 
       - name: "Install package and run testing unit"
         run: |
-          "npm install"
-          "npm test"
+          yarn install
+          yarn test
