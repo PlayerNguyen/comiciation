@@ -17,14 +17,20 @@ async function hasPermissionGroup(name: string) {
 
 /**
  * Create new permission group.
+ * @param id a permission group id.
  * @param name a name of permission group.
  * @param description a description of the permission group.
  */
-async function createPermissionGroup(name: string, description: string) {
+async function createPermissionGroup(
+  id: number,
+  name: string,
+  description: string
+) {
   if (await hasPermissionGroup(name)) {
     throw new Error("Permission group already exists.");
   }
   await KnexInstance(Config.Table.PermissionGroups).insert({
+    id,
     name,
     description,
   });
