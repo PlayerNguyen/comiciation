@@ -41,7 +41,7 @@ jobs:
       - name: "Initialize MySQL server"
         run: |
           sudo systemctl start mysql.service
-          mysql -e 'CREATE TABLE ${{ env.DATABASE_NAME_DEV }};' -u${{env.DATABASE_NAME_DEV}} -p${{ env.DATABASE_PASSWORD_DEV }}
+          mysql -e 'CREATE TABLE ${{ env.DATABASE_NAME_DEV }};' -u${{env.DATABASE_USER_DEV}} -p${{ env.DATABASE_PASSWORD_DEV }}
 
       - name: "Install package and run testing unit"
         run: |
