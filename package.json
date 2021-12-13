@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "test": "yarn test:server",
-    "test:server": "cd ./server && yarn test"
+    "test:server": "cd ./server && yarn test",
+    "install": "cd ./server && yarn install"
   }
 }
