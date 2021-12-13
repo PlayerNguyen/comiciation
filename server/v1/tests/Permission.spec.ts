@@ -3,7 +3,7 @@ import { PermissionGroupController } from "../controller/PermissionGroupControll
 import { PermissionGroupDefault } from "../Permission";
 
 describe("Should have permission group", () => {
-  it("Should have permission group", (done) => {
+  it("Should have permission groups on database", (done) => {
     Promise.all(
       PermissionGroupDefault.map((group) =>
         PermissionGroupController.hasPermissionGroup(group.name)

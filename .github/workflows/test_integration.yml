@@ -25,6 +25,7 @@ jobs:
       DATABASE_USER_DEV: root
       DATABASE_PASSWORD_DEV: root
       DATABASE_NAME_DEV: test
+      GITHUB_ACTIONS: true
 
     strategy:
       matrix:
