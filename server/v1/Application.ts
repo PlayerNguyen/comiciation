@@ -1,8 +1,8 @@
 import * as express from "express";
 import * as morgan from "morgan";
 import * as bodyParser from "body-parser";
-import { setupDatabase } from "./Database";
-import { setupPermission } from "./Permission";
+import { PreloadApplication } from "./PreloadApplication";
+
 const app = express();
 
 /**
@@ -13,17 +13,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(morgan("dev"));
 
-const main = async () => {
-  /**
-   * Database calls
-   */
-  await setupDatabase();
-  /**
-   * Then, setup permissions
-   */
-  await setupPermission();
-};
-main();
+PreloadApplication().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
 
 const ApplicationV1 = app;
 export default ApplicationV1;

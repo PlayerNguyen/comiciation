@@ -1,6 +1,7 @@
 import * as os from "os";
 import { Config } from "../Config";
 import { isExecutedGithubActions } from "../Environment";
+import { PreloadApplication } from "../PreloadApplication";
 export async function mochaGlobalSetup() {
   console.group(`Mocha performance test`);
   console.log(`System: ${os.platform()}`);
@@ -23,4 +24,14 @@ export async function mochaGlobalSetup() {
     console.log(`Database name: ${Config.Database.database}`);
     console.groupEnd();
   }
+
+  
+
+  console.group(`Server preload running`);
+  console.log(`Server preload running`);
+  /**
+   * Load application before running application
+   */
+  await PreloadApplication();
+  console.groupEnd();
 }
