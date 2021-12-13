@@ -36,5 +36,7 @@ jobs:
         run: |
           sudo systemctl start mysql.service
 
-      - name: "Run yarn test"
-        run: "yarn test"
+      - name: "Install package and run testing unit"
+        run: |
+          "yarn install"
+          "yarn test"
